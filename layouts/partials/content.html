@@ -1,0 +1,36 @@
+{{ if (and .Params.Cover  .Params.CoverFirst) }}
+  {{ partial "postcover.html" . }}
+{{ end }}
+
+{{ if .Title }}
+  <h1 class="post-title p-name"><a href="{{ .Permalink }}" class="u-url">{{ .Title | markdownify }}</a></h1>
+  {{ partial "post-meta.html" . }}
+{{ end }}
+
+{{ if (and .Params.Cover (not .Params.CoverFirst)) }}
+  {{ partial "postcover.html" . }}
+{{ end }}
+
+{{ if and .Params.reply .Params.reply.URL }}
+  {{ partial "mf2-in-reply-to.html" .Params.reply }}
+{{ end }}
+
+
+<div class="post-content e-content">
+{{ if .Truncated }}
+  {{ .Summary }}
+  </div>
+  <div>
+    <a class="read-more button" href="{{ .RelPermalink }}"
+      >{{ $.Site.Params.ReadMore | default "Read more" }} →</a
+    >
+  </div>
+{{ else }}
+  {{ .Content }}
+</div>
+{{ end }}
+
+{{ if (not .Title ) }}
+  {{ partial "post-meta.html" . }}
+
+{{ end }}

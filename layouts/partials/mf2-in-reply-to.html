@@ -1,0 +1,13 @@
+<div class="post-reply u-in-reply-to h-cite">
+    Replied to
+    <a href="{{ .URL }}">
+        {{ if .title }}
+            {{ .title }}
+        {{ else }}
+            {{ .url }}
+        {{ end }}
+    </a>
+    {{ if .author }}
+        by {{ .author }}
+    {{ end }}
+</div>

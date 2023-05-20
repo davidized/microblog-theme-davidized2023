@@ -1,0 +1,121 @@
+body.light-theme, :root {
+  /* light theme color */
+  --background: #fff;
+  --background-secondary: #d2d7df; // #eaeaea;
+  --header: #f3f4f7; // #fafafa;
+  --color: #000; // #222;
+  --color-secondary: #000; // #999;
+  --border-color: #8895aa; // #dcdcdc;
+  --color-link: #007FFF; //#0b4f6c;
+
+  --block-note: #007fff;
+  --block-note-background: #d6ebff;
+  --block-warning: #ef476f;
+  --block-warning-background: #fcd9e1;
+  --block-tip: #06d6a0;
+  --block-tip-background: #d7fef4;
+  --block-caution: #ffd166;
+  --block-caution-background: #fff3d6;
+
+  --footer-background: url("../img/shattered-island-inverse.png");
+
+  /* variables for js, must be the same as these in @custom-media queries */
+  --phoneWidth: (max-width: 684px);
+  --tabletWidth: (max-width: 900px);
+}
+
+body.dark-theme {
+  /* dark theme colors */
+  --background: #292a2d;
+  --background-secondary: #3b3d42;
+  --header: #252627;
+  --color: #a9a9b3;
+  --color-secondary: #73747b;
+  --border-color: #4a4b50;
+  --color-link: #0066CC; //#0b4f6c;
+
+  --block-note: #007fff;
+  --block-note-background: #003d7a;
+  --block-warning: #ef476f;
+  --block-warning-background: #a90f33;
+  --block-tip: #06d6a0;
+  --block-tip-background: #037758;
+  --block-caution: #ffd166;
+  --block-caution-background: #8f6400;
+
+  --footer-background: url("../img/shattered-island.gif");
+
+  /* variables for js, must be the same as these in @custom-media queries */
+  --phoneWidth: (max-width: 684px);
+  --tabletWidth: (max-width: 900px);
+}
+
+@media (prefers-color-scheme: light) {
+  body:not(.dark-theme) {
+    /* light theme color */
+    --background: #fff;
+    --background-secondary: #d2d7df; // #eaeaea;
+    --header: #f3f4f7; // #fafafa;
+    --color: #000; // #222;
+    --color-secondary: #000; // #999;
+    --border-color: #8895aa; // #dcdcdc;
+    --color-link: #007FFF; //#0b4f6c;
+
+  --block-note: #007fff;
+  --block-note-background: #d6ebff;
+  --block-warning: #ef476f;
+  --block-warning-background: #fcd9e1;
+  --block-tip: #06d6a0;
+  --block-tip-background: #d7fef4;
+  --block-caution: #ffd166;
+  --block-caution-background: #fff3d6;
+
+  --footer-background: url("../img/shattered-island-inverse.png");
+
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light-theme) {
+    /* dark theme colors */
+    --background: #292a2d;
+    --background-secondary: #3b3d42;
+    --header: #252627;
+    --color: #a9a9b3;
+    --color-secondary: #73747b;
+    --border-color: #0066CC0;
+
+  --block-note: #007fff;
+  --block-note-background: #003d7a;
+  --block-warning: #ef476f;
+  --block-warning-background: #a90f33;
+  --block-tip: #06d6a0;
+  --block-tip-background: #037758;
+  --block-caution: #ffd166;
+  --block-caution-background: #8f6400;
+
+  --footer-background: url("../img/shattered-island.gif");
+  }
+}
+
+/* MEDIA QUERIES */
+$phone: "max-width: 684px";
+$tablet: "max-width: 900px";
+
+@mixin greater-icon($stroke-width: 3px, $width: .95rem, $height: 100%) {
+  .greater-icon {
+    width: $width;
+    height: $height;
+
+    path {
+      stroke: currentColor;
+      stroke-width: $stroke-width;
+    }
+  }
+}
+
+/* HOW TO USE */
+
+/*@media ($phone) {*/
+  /*margin-top: 0;*/
+/*}*/

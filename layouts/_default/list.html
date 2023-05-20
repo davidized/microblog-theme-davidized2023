@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <div class="posts h-feed">
+    {{ range .Pages }}
+      <article class="post on-list post-type-{{ .Type }} h-entry">
+        {{ partial "content.html" . }}
+      </article>
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </div>
+{{ end }}

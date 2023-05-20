@@ -1,0 +1,34 @@
+<div class="post-meta">
+  {{ if .Date }}
+    {{ if (not .Title ) }}<a href="{{.Permalink}}" class="u-url">{{ end }}
+    <time class="post-date dt-published">
+      {{ .Date.Format ($.Site.Params.DateFormatList | default "2006-01-02") }}
+    </time>
+    {{ if (not .Title ) }}</a>{{ end }}
+
+    {{ if $.Site.Params.LastModDisplay }}
+      {{ partial "lastmod.html" . }}
+    {{ end }}
+  {{ end }}
+  {{ with .Params.Author }}
+    {{ $author := index $.Site.Data.authors . }}
+    <span class="post-author p-author h-card"
+      >— {{ $.Site.Params.WrittenBy | default "Written by" }} 
+      <a href="{{ $author.url }}" class="u-url p-name">{{ $author.name }}</a></span
+    >{{ end }}
+
+
+  {{ if $.Site.Params.ShowReadingTime }}
+    <span class="post-read-time"
+      >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
+    >
+  {{ end }}
+</div>
+
+{{ if .Params.tags }}
+<span class="post-tags">
+  {{ range .Params.tags }}
+    <a href="{{ (urlize (printf "tags/%s" . )) | absLangURL }}/" class="p-category">{{ . }}</a>&nbsp;
+  {{ end }}
+</span>
+{{ end }}

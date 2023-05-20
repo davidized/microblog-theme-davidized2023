@@ -1,0 +1,100 @@
+div[class$="-block"] {
+  border-left: 2px solid;
+  margin: 40px;
+  padding: 10px 20px;
+  background-color: var(--background-secondary);
+
+  @media ($phone) {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  &:before {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    left: -10px;
+    top: -10px;
+  }
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+div.note-block {
+	border-color: var(--block-note);
+	background-color: var(--block-note-background);
+
+	&:before {
+		content: 'Note';
+	}
+}
+
+div.warning-block {
+	border-color: var(--block-warning);
+	background-color: var(--block-warning-background);
+
+	&:before {
+		content: 'Warning';
+	}
+}
+
+div.tip-block {
+	border-color: var(--block-tip);
+	background-color: var(--block-tip-background);
+
+	&:before {
+		content: 'Tip';
+	}
+}
+
+div.caution-block {
+	border-color: var(--block-caution);
+	background-color: var(--block-caution-background);
+
+	&:before {
+		content: 'Caution';
+	}
+}
+
+div.important-block {
+	&:before {
+		content: 'Important';
+	}
+}
+
+div.attention-block {
+	&:before {
+		content: 'Attention';
+	}
+}
+
+div.hint-block {
+	border-color: var(--block-tip);
+	background-color: var(--block-tip-background);
+	
+	&:before {
+		content: 'Hint';
+	}
+}
+
+div.error-block {
+	&:before {
+		content: 'Error';
+	}
+}
+
+div.danger-block {
+	border-color: var(--block-warning);
+	background-color: var(--block-warning-background);
+
+	&:before {
+		content: 'Danger';
+	}
+}
